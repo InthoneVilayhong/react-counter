@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Show from "./Show";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [number, setNumber] = useState(0);
+    return (
+        <div>
+            <div className="header">
+                <i class="fa-solid fa-calculator calculator"></i>
+                <h1>React Counter</h1>
+            </div>
+            <div className="container">
+                <Show number={number} setNumber={setNumber} />
+            </div>
+            <div className="footer">
+                <p>Made by me to me at Le reacteur</p>
+            </div>
+        </div>
+    );
 }
 
 export default App;
